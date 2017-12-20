@@ -10,7 +10,7 @@ So this application is my sample of Fable app where I use some of Fable strength
 
 * HTML/CSS/JS framework - **Bootstrap**
 * JavaScript library with existing Fable bindings - **React**
-* JavaScript library with custom bindings - **Plotly**
+* JavaScript library with custom bindings - **Chart.js**
 * F# library - **Expecto**
 
 ## Data
