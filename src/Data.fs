@@ -7,6 +7,12 @@ type PartyValue =
         ColorCode : string        
     }
 
+type RegionValue = 
+    {
+        Name : string
+        Value : float
+    }
+
 let data = 
     [
         { Name = "Občanská demokratická strana"; Value = 11.320000; ColorCode = "#183E8E" }
@@ -40,4 +46,23 @@ let data =
         { Name = "Svob.a př.dem.-T.Okamura (SPD)"; Value = 10.640000; ColorCode = "#917c6f" }
         { Name = "Strana Práv Občanů"; Value = 0.360000; ColorCode = "#000000" }
         { Name = "Národ Sobě"; Value = 0.000000; ColorCode = "#000000" }
+    ]
+
+let regions = 
+    [
+        { Name = "Celá ČR"; Value = 60.84 }
+        { Name = "Hl. m. Praha"; Value = 67.130000 }
+        { Name = "Středočeský"; Value = 63.440000 }
+        { Name = "Jihočeský"; Value = 61.740000 }
+        { Name = "Plzeňský"; Value = 59.910000 }
+        { Name = "Karlovarský"; Value = 52.110000 }
+        { Name = "Ústecký"; Value = 52.380000 }
+        { Name = "Liberecký"; Value = 60.050000 }
+        { Name = "Královéhradecký"; Value = 63.250000 }
+        { Name = "Pardubický"; Value = 63.050000 }
+        { Name = "Vysočina"; Value = 64.030000 }
+        { Name = "Jihomoravský"; Value = 61.750000 }
+        { Name = "Olomoucký"; Value = 59.770000 }
+        { Name = "Zlínský"; Value = 62.120000 }
+        { Name = "Moravskoslezský"; Value = 55.860000 }
     ]

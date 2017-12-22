@@ -16,6 +16,7 @@ type HtmlPropExtensions=
 type AppProps = 
     {
         Parties : PartyValue list
+        Regions : RegionValue list
     }
 
 type App(props) =
@@ -33,8 +34,7 @@ type App(props) =
             }
         visibleParties @ [ others ]
 
-
-    let renderChart title (values : PartyValue[]) =
+    let renderPartiesChart title (values : PartyValue[]) =
         let chartInfo = 
             { 
                 Options = Some { Scales = Some { XAxes = [||]; YAxes = [| { Ticks = { BeginAtZero = true }} |]}; Title = Some title; Legend = None }
@@ -57,8 +57,32 @@ type App(props) =
             }
         renderChart chartInfo
 
+    let renderRegionsChart title (values : RegionValue[]) =
+        let chartInfo = 
+            { 
+                Options = Some { Scales = Some { XAxes = [||]; YAxes = [| { Ticks = { BeginAtZero = true }} |]}; Title = Some title; Legend = None }
+                CanvasId = "regions-chart"; 
+                Data = 
+                    Bar
+                        {
+                            Labels =  values |> Array.map (fun v -> v.Name)
+                            Datasets = 
+                                [| 
+                                    { 
+                                        Label  = None
+                                        Data = values |> Array.map (fun v ->  v.Value :> obj)
+                                        BackgroundColor =None
+                                        BorderColor = None
+                                        BorderWidth = Some 1
+                                    }
+                                |]
+                        }                                 
+            }
+        renderChart chartInfo
+
     member x.componentDidMount()= 
-        viewParties props.Parties |> Seq.toArray |> renderChart "Výsledky"
+        viewParties props.Parties |> Seq.toArray |> renderPartiesChart "Výsledky" |> ignore
+        props.Regions |> Seq.toArray |> renderRegionsChart "Účast" |> ignore
 
     member this.render () =
         R.div [] [
@@ -86,14 +110,17 @@ type App(props) =
                         [
                             R.canvas [Id "my-chart"] []
                         ]
-                    R.div [ClassName "tab-pane"; Id "tab2"][unbox "TODO Účast"]
+                    R.div [ClassName "tab-pane"; Id "tab2"]
+                        [
+                            R.canvas [Id "regions-chart"] []
+                        ]
                 ]
             ]
         ]
 
 let init() =
      ReactDom.render(
-        R.com<App,_,_> { Parties = data} [],
+        R.com<App,_,_> { Parties = data; Regions = regions} [],
         Browser.document.getElementById("content"))
 
 init()
