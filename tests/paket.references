@@ -1,0 +1,7 @@
+dotnet-fable
+Fable.Core
+Fable.Import.Browser
+Fable.React
+Expecto
+Expecto.BenchmarkDotNet
+Expecto.FsCheck

@@ -5,6 +5,7 @@
   <ItemGroup>
     <Compile Include="Fable.Import.Chartjs.fs" />
     <Compile Include="Data.fs" />
+    <Compile Include="ChartProviders.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />

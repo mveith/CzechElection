@@ -6,6 +6,7 @@ open R.Props
 open Fable.Import.Chartjs
 open Fable.Core
 open Data
+open ChartProviders
 module R = Fable.Helpers.React
 
 type HtmlPropExtensions=
@@ -34,55 +35,9 @@ type App(props) =
             }
         visibleParties @ [ others ]
 
-    let renderPartiesChart title (values : PartyValue[]) =
-        let chartInfo = 
-            { 
-                Options = Some { Scales = Some { XAxes = [||]; YAxes = [| { Ticks = { BeginAtZero = true }} |]}; Title = Some title; Legend = None }
-                CanvasId = "my-chart"; 
-                Data = 
-                    Bar
-                        {
-                            Labels =  values |> Array.map (fun v -> v.Name)
-                            Datasets = 
-                                [| 
-                                    { 
-                                        Label  = None
-                                        Data = values |> Array.map (fun v ->  v.Value :> obj)
-                                        BackgroundColor =Some (values |> Array.map (fun v -> Hex v.ColorCode))
-                                        BorderColor = Some (values |> Array.map (fun v -> Hex v.ColorCode))
-                                        BorderWidth = Some 1
-                                    }
-                                |]
-                        }                                 
-            }
-        renderChart chartInfo
-
-    let renderRegionsChart title (values : RegionValue[]) =
-        let chartInfo = 
-            { 
-                Options = Some { Scales = Some { XAxes = [||]; YAxes = [| { Ticks = { BeginAtZero = true }} |]}; Title = Some title; Legend = None }
-                CanvasId = "regions-chart"; 
-                Data = 
-                    Bar
-                        {
-                            Labels =  values |> Array.map (fun v -> v.Name)
-                            Datasets = 
-                                [| 
-                                    { 
-                                        Label  = None
-                                        Data = values |> Array.map (fun v ->  v.Value :> obj)
-                                        BackgroundColor =None
-                                        BorderColor = None
-                                        BorderWidth = Some 1
-                                    }
-                                |]
-                        }                                 
-            }
-        renderChart chartInfo
-
     member x.componentDidMount()= 
-        viewParties props.Parties |> Seq.toArray |> renderPartiesChart "Výsledky" |> ignore
-        props.Regions |> Seq.toArray |> renderRegionsChart "Účast" |> ignore
+        viewParties props.Parties |> Seq.toArray |> partiesChart "Výsledky" |> renderChart |> ignore
+        props.Regions |> Seq.toArray |> regionsChart "Účast" |> renderChart |> ignore
 
     member this.render () =
         R.div [] [

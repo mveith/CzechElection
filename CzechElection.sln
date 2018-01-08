@@ -1,17 +1,35 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "CzechElection", "src/CzechElection.fsproj", "{E5DEFC96-37CF-4844-9C9E-CFA0A9A8AED3}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "CzechElection", "src\CzechElection.fsproj", "{E5DEFC96-37CF-4844-9C9E-CFA0A9A8AED3}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CzechElection.Tests", "tests\CzechElection.Tests.fsproj", "{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E5DEFC96-37CF-4844-9C9E-CFA0A9A8AED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E5DEFC96-37CF-4844-9C9E-CFA0A9A8AED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5DEFC96-37CF-4844-9C9E-CFA0A9A8AED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5DEFC96-37CF-4844-9C9E-CFA0A9A8AED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Debug|x64.ActiveCfg = Debug|x64
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Debug|x64.Build.0 = Debug|x64
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Debug|x86.ActiveCfg = Debug|x86
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Debug|x86.Build.0 = Debug|x86
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Release|x64.ActiveCfg = Release|x64
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Release|x64.Build.0 = Release|x64
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Release|x86.ActiveCfg = Release|x86
+		{354DD535-00C3-41F0-814F-D5A3E1CE0F4D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal

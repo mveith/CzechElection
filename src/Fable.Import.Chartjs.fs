@@ -214,7 +214,7 @@ let private convertType = function
 
 [<Global>]
 type private Chart(ctx:Browser.HTMLElement, settings:obj) =
-    member x.destroy () = failwith "JS only"
+    member x.destroy () = jsNative
 
 type RenderedChart =
     {
