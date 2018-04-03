@@ -15,3 +15,13 @@ So this application is my sample of Fable app where I use some of Fable strength
 
 ## Data
 [Official open data](https://www.volby.cz/opendata/ps2017/ps2017_opendata.htm) from the [Czech Statistical Office](https://www.czso.cz/csu/czso/home)
+
+## How to run?
+
+```bash
+yarn # Install dependencies
+cd src
+dotnet restore # Install .NET Core dependencies
+dotnet fable yarn-start # Start Fable server and Webpack dev server
+
+# Open: http://localhost:8080/
